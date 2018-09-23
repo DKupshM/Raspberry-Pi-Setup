@@ -3,7 +3,7 @@ Steps to Set Up my Raspberry Pi
 
 ## Logging in and setting up Config
 
-1. Login to Raspberry Pi with following command
+___1. Login to Raspberry Pi with following command___
 
 ```
 ssh pi@raspberrypi.local
@@ -15,7 +15,7 @@ Password is
 raspberry
 ```
 
-2. Change the configurations
+___2. Change the configurations___
 
 ```
 sudo raspi-config
