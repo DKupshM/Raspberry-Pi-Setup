@@ -5,4 +5,8 @@ Steps to Set Up my Raspberry Pi
 
 1. Login to Raspberry Pi with following command
 
-'''ssh pi@raspberrypi.local'''
+```
+ssh pi@raspberrypi.local
+```
+
+
