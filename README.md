@@ -34,6 +34,8 @@ First change the user password under 1.
 
 Now change the hostname under 2 -> N1.
 
+I changed to college-hole.
+
 Now allow wifi access under 2 -> N2
 
 Change boot options under 3 -> B1 -> B2
