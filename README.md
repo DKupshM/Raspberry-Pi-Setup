@@ -56,3 +56,27 @@ Type in the following command to make it so you no longer have to use a password
 ssh-copy-id pi@college-hole.local
 ```
 
+__4. Update the Pi
+
+ssh back into the Pi using the following command:
+
+```
+ssh pi@college-hole.local
+```
+
+Now type the following command to update the pi
+
+```
+sudo apt update && sudo apt -y upgrade
+```
+
+Finally reboot the PI using:
+```
+sudo reboot
+```
+
+## Installing OpenVPN
+
+
+
+
