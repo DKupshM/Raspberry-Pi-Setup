@@ -9,4 +9,16 @@ Steps to Set Up my Raspberry Pi
 ssh pi@raspberrypi.local
 ```
 
+Password is
+
+```
+raspberry
+```
+
+2. Change the configurations
+
+```
+sudo raspi-config
+```
+
 
