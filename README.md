@@ -56,7 +56,7 @@ Type in the following command to make it so you no longer have to use a password
 ssh-copy-id pi@college-hole.local
 ```
 
-__4. Update the Pi
+___4. Update the Pi___
 
 ssh back into the Pi using the following command:
 
