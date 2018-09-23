@@ -50,6 +50,9 @@ Now finish and reboot!
 
 __3. SSH without password__
 
+Type in the following command to make it so you no longer have to use a password
 
-
+```
+ssh-copy-id pi@college-hole.local
+```
 
