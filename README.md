@@ -96,12 +96,14 @@ Run the command:
 curl -sSL https://install.pi-hole.net | bash
 ```
 Choose all the defaults except choose ___tun0___ as the interface.
+*Note if it stops halfway through, the download failed and you have to restart the pi.
+
+
+After finishing I usually change/remove the password for the pihole by running:
 
 ```
 pihole -a -p
 ```
-
-*Note if it stops halfway through, the download failed and you have to restart the pi.
 
 ## Configure OpenVPN
 
