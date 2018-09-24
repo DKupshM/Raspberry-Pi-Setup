@@ -77,6 +77,14 @@ sudo reboot
 
 ## Installing OpenVPN
 
+Now it's time to set up openvpn. Execute the following commands:
 
+```
+wget https://git.io/vpn -O openvpn-install.sh
+chmod 755 openvpn-install.sh
+sudo ./openvpn-install.sh
+```
+
+Accept all the defaults and wait a while.
 
 
