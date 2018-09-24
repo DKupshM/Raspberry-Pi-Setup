@@ -137,4 +137,29 @@ Now exit and save the file. Restart the OpenVPN with:
 sudo systemctl restart openvpn
 ```
 
+## Creating and Copying Users
 
+To create a new Open VPN user run:
+```
+sudo ./openvpn-install.sh
+```
+
+Change the permissions of the root files by running:
+```
+sudo chmod 755 /root/
+```
+
+
+Now copy the user to your local device by running (outside the pi)
+
+```
+scp pi@college-hole.local:/root/<USER>.ovpn .
+```
+
+## Firewalls
+
+Run the following command to allow traffic on the tun0 interface:
+
+```
+iptables -I INPUT -i tun0 -j ACCEPT
+```
