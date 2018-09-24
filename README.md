@@ -161,5 +161,5 @@ scp pi@college-hole.local:/root/<USER>.ovpn .
 Run the following command to allow traffic on the tun0 interface:
 
 ```
-iptables -I INPUT -i tun0 -j ACCEPT
+sudo iptables -I INPUT -i tun0 -j ACCEPT
 ```
