@@ -87,4 +87,52 @@ sudo ./openvpn-install.sh
 
 Accept all the defaults and wait a while.
 
+## Install Pi-Hole
+
+Now it's time to get Pi-Hole onto the pi.
+
+Run the command:
+```
+curl -sSL https://install.pi-hole.net | bash
+```
+Choose all the defaults except choose ___tun0___ as the interface.
+
+```
+pihole -a -p
+```
+
+*Note if it stops halfway through, the download failed and you have to restart the pi.
+
+## Configure OpenVPN
+
+First get the IP address of the tun0 interface. Run:
+
+```
+ifconfig tun0 | grep 'inet'
+```
+
+For my pi it was 10.8.0.1
+
+Now we want to edit the openvpn config file. Run:
+
+```
+sudo nano /etc/openvpn/server.conf
+```
+
+Now find all the options with
+```
+push "dhcp-option DNS <some number here>"
+```
+Add a ___#___ to the beginning of their lines
+
+Add the following line with your tun0 ip address:
+```
+push "dhcp-option DNS 10.8.0.1"
+```
+
+Now exit and save the file. Restart the OpenVPN with:
+```
+sudo systemctl restart openvpn
+```
+
 
