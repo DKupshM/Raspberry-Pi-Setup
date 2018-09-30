@@ -75,6 +75,57 @@ Finally reboot the PI using:
 sudo reboot
 ```
 
+___5. Setting Static IP (Optional)___
+
+Run:
+
+```
+ip -4 addr show | grep global
+```
+
+The first address is the IP address of your Pi on the network, and the part after the slash is the network size. It is highly likely that yours will be a /24.
+
+The second address is the brd (broadcast) address of the network.
+
+Find the address of your router (or gateway)
+
+```
+ip route | grep default | awk '{print $3}'
+```
+
+Finally note down the address of your DNS server, which is often the same as your gateway.
+
+```
+cat /etc/resolv.conf
+```
+
+Edit /etc/dhcpcd.conf as follows:-
+
+```
+interface eth0
+       static ip_address=10.1.1.30/24
+       static routers=10.1.1.1
+       static domain_name_servers=10.1.1.1
+
+interface wlan0
+       static ip_address=10.1.1.31/24
+       static routers=10.1.1.1
+       static domain_name_servers=10.1.1.1
+```  
+
+Then disable the DHCP client daemon and switch to standard Debian networking:
+
+```
+sudo systemctl disable dhcpcd
+sudo systemctl enable networking
+```
+
+Now reboot the system for the change to take effect
+
+```
+sudo reboot
+```
+
 ## Installing OpenVPN
 
 Now it's time to set up openvpn. Execute the following commands:
